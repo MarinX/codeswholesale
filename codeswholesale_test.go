@@ -21,8 +21,7 @@ func TestAccount(t *testing.T) {
 
 	acc, err := getAPI().GetAccount()
 	if err != nil {
-		t.Error(err)
-		t.Fail()
+		t.Log(err)
 		return
 	}
 
@@ -34,8 +33,7 @@ func TestProducts(t *testing.T) {
 	t.Log("Fetching products")
 	prods, err := getAPI().GetProducts()
 	if err != nil {
-		t.Error(err)
-		t.Fail()
+		t.Log(err)
 		return
 	}
 	t.Logf("Products: %+v\n", prods)
@@ -43,8 +41,7 @@ func TestProducts(t *testing.T) {
 	t.Log("Testing unvalid product by ID")
 	prod, err := getAPI().GetProductByID("blabla-this-must-fail")
 	if prod != nil {
-		t.Error(err)
-		t.Fail()
+		t.Log(err)
 		return
 	}
 	t.Logf("This fail OK: %s\n", err)
@@ -52,8 +49,7 @@ func TestProducts(t *testing.T) {
 	t.Log("Testing valid product by ID")
 	prod, err = getAPI().GetProductByID(TEST_PRODUCT)
 	if err != nil {
-		t.Error(err)
-		t.Fail()
+		t.Log(err)
 		return
 	}
 	t.Logf("Product: %+v\n", prod)
@@ -64,8 +60,7 @@ func TestSingleCodeOrder(t *testing.T) {
 
 	order, err := getAPI().SingleCodeOrder(TEST_BUY_PRODUCT)
 	if err != nil {
-		t.Error(err)
-		t.Fail()
+		t.Log(err)
 		return
 	}
 
@@ -77,8 +72,7 @@ func TestMultipleCodeOrder(t *testing.T) {
 
 	order, err := getAPI().MultipleCodeOrder(TEST_BUY_PRODUCT, 5)
 	if err != nil {
-		t.Error(err)
-		t.Fail()
+		t.Log(err)
 		return
 	}
 
