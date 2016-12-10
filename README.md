@@ -1,5 +1,8 @@
 # Go CodesWholesale API
 
+[![Build Status](https://travis-ci.org/MarinX/codeswholesale.svg)](https://travis-ci.org/MarinX/codeswholesale)
+[![GoDoc](https://godoc.org/github.com/MarinX/codeswholesale?status.svg)](https://godoc.org/github.com/MarinX/codeswholesale)
+
 codeswholesale is a Go client library for the [CodesWholesale API](https://docs.codeswholesale.com/api-documentation/).
 
 
@@ -87,7 +90,7 @@ codeswholesale is a Go client library for the [CodesWholesale API](https://docs.
 ```go
 	cw := codeswholesale.New("ClientID", "ClientSecret", codeswholesale.MODE_SANDBOX)
 
-	orders, err := cw.MultipleCodeOrder("product-cwid"), 5
+	orders, err := cw.MultipleCodeOrder("product-cwid",5)
 	if err != nil {
 		fmt.Println(err)
 		return
